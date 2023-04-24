@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Cheatsheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1>CSS cheatsheet</h1>
+      <h2>Welcome to my CSS cheatsheet!</h2>
+      <hr />
+      <p>
+        CSS can be both incredibly powerful and frustrating. With so many
+        properties, values, and selectors to remember, it can be difficult to
+        keep everything straight. With this CSS cheatsheet you can find quickly
+        and easily the information needed to style websites . This will help you
+        save time &#128522;
+      </p>
+      <p id="version"><strong>V 1.0</strong> by @final-aerith</p>
+    </header>
+
+    <!-- Section Selectors -->
+    <section>
+      <h3 id="selectors">Selectors</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>What selects &amp; syntax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Universal selector</td>
+            <td>
+              <span class="gray">/* Selects all HTML elements */</span>
+              <br />
+              <span class="green"
+                >*
+                <span class="blue">{ style properties } </span>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Element selector (sometimes called a tag or type selector)</td>
+            <td>
+              <span class="gray"
+                >/* All HTML elements of the specified type */</span
+              >
+              <br />
+              <span class="green"
+                >element
+                <span class="blue">{ style properties } </span>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Class selector</td>
+            <td>
+              <span class="gray"
+                >/* The element(s) on the page with the specified class */</span
+              >
+              <br />
+              <span class="purple"
+                >.class_name
+                <span class="blue">{ style properties } </span>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>ID selector</td>
+            <td>
+              <span class="gray"
+                >/* The element on the page with the specified ID */</span
+              >
+              <br />
+              <span class="purple"
+                >#id_value
+                <span class="blue">{ style properties } </span>
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Attribute selector</td>
+            <td>
+              <span class="gray"
+                >/* All elements that have the given attribute */</span
+              >
+              <br />
+              <span class="green"
+                >element
+                <span class="blue"
+                  >[
+                  <span class="purple">attr</span>
+                  ] { style properties }
+                </span>
+              </span>
+              <br />
+              <span class="gray"
+                >/* Other options: [attr=value] [attr~=value] [attr|=value]
+                [attr^=value] [attr$=value] [attr*=value] */</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Selector list</td>
+            <td>
+              <span class="gray">/* Selects all the matching nodes */</span>
+              <br />
+              <span class="green">element1 , element2</span>
+              <span class="blue">{ style properties } </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section Combinators -->
+    <section>
+      <h3 id="combinators">Combinators</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>What selects &amp; syntax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Descendant combinator</td>
+            <td>
+              <span class="gray"
+                >/* Selects nodes that are descendants of the first element
+                */</span
+              >
+              <br />
+              <span class="green">" " (space)</span>
+              <br />
+              <span class="green">.parent .child</span>
+              <span class="blue">{ style properties } </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Child combinator</td>
+            <td>
+              <span class="gray"
+                >/* Selects nodes that are direct children of the first element
+                */</span
+              >
+              <br />
+              <span class="green">&gt;</span>
+              <br />
+              <span class="green">.parent &gt; .child</span>
+              <span class="blue">&#123; style properties &#125; </span>
+            </td>
+          </tr>
+          <tr>
+            <td>General sibling combinator</td>
+            <td>
+              <span class="gray">/* Selects siblings */</span>
+              <br />
+              <span class="green">~</span>
+              <br />
+              <span class="green">.child ~ .sibling</span>
+              <span class="blue">{ style properties } </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Adjacent sibling combinator</td>
+            <td>
+              <span class="gray"
+                >/* Matches the second element only if it immediately follows
+                the first element */</span
+              >
+              <br />
+              <span class="green">+</span>
+              <br />
+              <span class="green">.child + .sibling</span>
+              <span class="blue">{ style properties } </span>
+            </td>
+          </tr>
+          <tr>
+            <td>Column combinator</td>
+            <td>
+              <span class="gray"
+                >/* Selects nodes which belong to a column */</span
+              >
+              <br />
+              <span class="green">||</span>
+              <br />
+              <span class="green">column-selector || cell-selector</span>
+              <span class="blue">{ style properties } </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section Pseudo-classes  -->
+    <section>
+      <h3 id="pseudo-classes">Pseudo-classes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>What selects &amp; syntax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Element display state pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Selects elements based on their display states*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :fullscreen :modal :picture-in-picture*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Input pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Elements based on HTML attributes and the state that the
+                field is in before and after interaction*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :autofill :enabled :read-only*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Linguistic pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Elements based on language or script direction*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :dir() :lang()*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Location pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Relate to links, and to targeted elements within the current document*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :any-link :visited :target*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Resource state pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Apply to media that is capable of being in a state where it would be described as playing, such as a video*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :playing :paused*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Time-dimensional pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Apply when viewing something which has timing, such as a WebVTT caption track*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :current :past :future*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Tree-structural pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Relate to the location of an element within the document tree*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :nth-child :first-child :last-of-type*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>User action pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Require some interaction by the user in order for them to apply, such as holding a mouse pointer over an element*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :hover :focus :active*/</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Functional pseudo-classes</td>
+            <td>
+              <span class="gray"
+                >/* Accept a selector list or forgiving selector list as a parameter*/</span
+              >
+              <br />
+              <span class="green">:</span>
+              <br />
+              <span class="green">selector</span>
+              <span class="purple">: pseudo-class</span>
+              <span class="blue">{ style properties } </span>
+              <br />
+              <span class="gray"
+                >/* Examples: :is( ) :not( ) :has( )*/</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section Pseudo-elements -->
+    <section>
+        <h3 id="pseudo-elements">Pseudo-elements</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>What selects &amp; syntax</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CSS pseudo-element</td>
+              <td>
+                <span class="gray"
+                  >/* Is a keyword added to a selector that lets you style a specific part of the selected element(s)*/</span
+                >
+                <br />
+                <span class="green">:</span>
+                <br />
+                <span class="green">selector</span>
+                <span class="purple">:: pseudo-element</span>
+                <span class="blue">{ style properties } </span>
+                <br />
+                <span class="gray"
+                  >/* Examples: ::first-line ::before ::placeholder*/</span
+                >
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </section>
+    <footer>Based on information on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN Web Docs</a> for studying purposes.</footer>
+  </body>
+</html>
